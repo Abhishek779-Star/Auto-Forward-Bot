@@ -7,18 +7,13 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-START_TEXT = """<b>👋 Hello! I am SilentXForward Bot.</b>
+START_TEXT = """<b>👋ʜᴇʟʟᴏ! ɪ ᴀᴍ ᴀᴠ_ғᴏʀᴡᴀʀᴅ_ʙᴏᴛ.\n\nɪ ᴄᴀɴ ғᴏʀᴡᴀʀᴅ ᴠɪᴅᴇᴏs ᴀɴᴅ ᴅᴏᴄᴜᴍᴇɴᴛs ғʀᴏᴍ ᴍᴜʟᴛɪᴘʟᴇ ᴄʜᴀɴɴᴇʟs ᴛᴏ ᴍᴜʟᴛɪᴘʟᴇ ᴏᴛʜᴇʀ ᴄʜᴀɴɴᴇʟs, ғɪʟᴛᴇʀɪɴɢ ᴏᴜᴛ ᴜɴᴡᴀɴᴛᴇᴅ ᴄᴏɴᴛᴇɴᴛ.!! 😍\n<blockquote>🌿 ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href="https://t.me/AV_MOVIES_WORLD">AV_MOVIES_WORLD</a></blockquote></b>"""
 
-I Can Forward Videos And Documents From Multiple Channels To Multiple Other Channels, Filtering Out Unwanted Content.
+HELP_TEXT = """<b>ℹ️ Help Menu
 
-<b>Maintained By:</b> <a href="https://t.me/SilentXBotz">SilentXBotz</a>
-"""
+I Am An Auto-Forward Bot. I Forward Files From Source Channels To Target Channels.</b>
 
-HELP_TEXT = """<b>ℹ️ Help Menu</b>
-
-I Am An Auto-Forward Bot. I Forward Files From Source Channels To Target Channels.
-
-<b>Commands:</b>
+<b>Commands:
 /start - Check If I Am Alive.
 /help - Show This Help Message.
 /about - Show Information About Me.
@@ -26,36 +21,37 @@ I Am An Auto-Forward Bot. I Forward Files From Source Channels To Target Channel
 /remove_target &lt;source_id&gt; &lt;target_id&gt; - Remove A Target From Source
 /remove_source &lt;source_id&gt; - Remove Source
 /list - View All Set Channels 
-/clear - Clear All Mappings
+/clear - Clear All Mappings</b>
 
-<b>How to use:</b>
+<b>How to use:
 1. Add Me To Source Channels And Target Channels As Admin.
 2. Use /set command to link source to target channels.
-3. I Will Automatically Forward Videos And Documents!
+3. I Will Automatically Forward Videos And Documents!</b>
 
-<b>Channel:</b> @SilentXBotz
+<b>Channel: @AV_MOVIES_WORLD</b>
 """
 
-ABOUT_TEXT = """<b>🤖 About SilentXForward</b>
-
-<b>Name:</b> SilentXForward
-<b>Version:</b> 2.0
-<b>Channel:</b> <a href="https://t.me/SilentXBotz">SilentXBotz</a>
-<b>Repository:</b> <a href="https://github.com/NBBotz/Auto-Forward-Bot">GitHub</a>
-
-<b>Features:</b>
-- Multi-Source to Multi-Target
-- Video & Document Filter
-- FloodWait Handling
-- MongoDB Database
-- Queue System
-"""
+ABOUT_TEXT = """<b><blockquote>╭────[ ᴍʏ ᴅᴇᴛᴀɪʟs ]────⍟</blockquote>
+<blockquote>├⍟ 🎭 Mʏ Nᴀᴍᴇ : <a href='https://t.me/AV_Forwardz_Robot'>ᴀᴠ ғᴏʀᴡᴀʀᴅ ʙᴏᴛ</a></blockquote>
+<blockquote>├⍟ 🇮🇳 Cʀᴇᴀᴛᴏʀ : <a href='https://t.me/AV_King1'>ཧᜰ꙰ꦿ➢𝐀𝐛𝔥𝕚ŞℍＥҜ༒</a></blockquote>
+<blockquote>├⍟ 📚 Lɪʙʀᴀʀʏ : <a href='https://docs.pyrogram.org/'>ᴘʏʀᴏɢʀᴀᴍ</a></blockquote>
+<blockquote>├⍟ 🍿 Lᴀɴɢᴜᴀɢᴇ : <a href='https://www.python.org/download/releases/3.0/'>ᴘʏᴛʜᴏɴ 𝟹</a></blockquote>
+<blockquote>├⍟ 🐍 DᴀᴛᴀBᴀsᴇ : <a href='https://www.mongodb.com/'>ᴍᴏɴɢᴏ ᴅʙ</a></blockquote>
+<blockquote>├⍟ ⚙️ Bᴏᴛ Sᴇʀᴠᴇʀ : <a href='https://heroku.com/'>ʜᴇʀᴏᴋᴜ</a></blockquote>
+<blockquote>├⍟ 🥶 Bᴜɪʟᴅ Sᴛᴀᴛᴜs : ᴠ𝟸.𝟶 [ ꜱᴛᴀʙʟᴇ ]</blockquote>
+<blockquote>├⍟ Features:</blockquote>
+<blockquote>├⍟ Multi-Source to Multi-Target</blockquote>
+<blockquote>├⍟ Video & Document Filter</blockquote>
+<blockquote>├⍟ FloodWait Handling</blockquote>
+<blockquote>├⍟ MongoDB Database</blockquote>
+<blockquote>├⍟ Queue System</blockquote>
+<blockquote>╰───────────────⍟</b></blockquote>"""
 
 BUTTONS = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton("📢 Channel", url="https://t.me/SilentXBotz"),
-            InlineKeyboardButton("🐱 GitHub", url="https://github.com/NBBotz/Auto-Forward-Bot")
+            InlineKeyboardButton("📢 Channel", url="https://t.me/AV_MOVIES_WORLD"),
+            InlineKeyboardButton("🥰 ཧᜰ꙰ꦿ➢𝐀𝐛𝔥𝕚ŞℍＥҜ༒", url="https://t.me/AV_King1")
         ]
     ]
 )
